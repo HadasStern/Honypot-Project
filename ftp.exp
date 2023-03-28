@@ -1,0 +1,29 @@
+#!/usr/bin/expect -f
+
+spawn ./pentbox.rb
+expect "Network tools"
+send "2\r"
+
+expect "Honeypot"
+send "3\r"
+
+expect "Fast"
+send "2\r"
+
+expect "Open"
+send "21\r"
+
+expect "false"
+send "your blocked man!\r"
+
+expect "log"
+send "y\r"
+
+expect "file"
+send "/home/kali/Desktop/pentbox/ftp_log.txt\r"
+
+expect "beep"
+send "y\r"
+
+interact
+
